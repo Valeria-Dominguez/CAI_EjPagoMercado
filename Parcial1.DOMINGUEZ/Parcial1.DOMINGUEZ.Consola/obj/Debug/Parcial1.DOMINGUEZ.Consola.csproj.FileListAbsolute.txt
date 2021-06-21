@@ -8,3 +8,13 @@ C:\Users\Valeria\source\repos\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\obj\
 C:\Users\Valeria\source\repos\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\bin\Debug\Parcial1.DOMINGUEZ.Libreria.dll
 C:\Users\Valeria\source\repos\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\bin\Debug\Parcial1.DOMINGUEZ.Libreria.pdb
 C:\Users\Valeria\source\repos\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\obj\Debug\Parcial1.DOMINGUEZ.Consola.csproj.CopyComplete
+C:\Users\Valeria\Downloads\CAI\Ejercicios\Primera parte\CAI_EjPagoMercado\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\bin\Debug\Parcial1.DOMINGUEZ.Consola.exe.config
+C:\Users\Valeria\Downloads\CAI\Ejercicios\Primera parte\CAI_EjPagoMercado\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\bin\Debug\Parcial1.DOMINGUEZ.Consola.exe
+C:\Users\Valeria\Downloads\CAI\Ejercicios\Primera parte\CAI_EjPagoMercado\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\bin\Debug\Parcial1.DOMINGUEZ.Consola.pdb
+C:\Users\Valeria\Downloads\CAI\Ejercicios\Primera parte\CAI_EjPagoMercado\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\bin\Debug\Parcial1.DOMINGUEZ.Libreria.dll
+C:\Users\Valeria\Downloads\CAI\Ejercicios\Primera parte\CAI_EjPagoMercado\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\bin\Debug\Parcial1.DOMINGUEZ.Libreria.pdb
+C:\Users\Valeria\Downloads\CAI\Ejercicios\Primera parte\CAI_EjPagoMercado\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\obj\Debug\Parcial1.DOMINGUEZ.Consola.csprojAssemblyReference.cache
+C:\Users\Valeria\Downloads\CAI\Ejercicios\Primera parte\CAI_EjPagoMercado\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\obj\Debug\Parcial1.DOMINGUEZ.Consola.csproj.CoreCompileInputs.cache
+C:\Users\Valeria\Downloads\CAI\Ejercicios\Primera parte\CAI_EjPagoMercado\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\obj\Debug\Parcial1.DOMINGUEZ.Consola.csproj.CopyComplete
+C:\Users\Valeria\Downloads\CAI\Ejercicios\Primera parte\CAI_EjPagoMercado\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\obj\Debug\Parcial1.DOMINGUEZ.Consola.exe
+C:\Users\Valeria\Downloads\CAI\Ejercicios\Primera parte\CAI_EjPagoMercado\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Consola\obj\Debug\Parcial1.DOMINGUEZ.Consola.pdb

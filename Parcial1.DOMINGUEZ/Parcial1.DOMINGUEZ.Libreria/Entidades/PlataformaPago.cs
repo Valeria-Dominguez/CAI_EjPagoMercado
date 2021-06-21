@@ -36,7 +36,7 @@ namespace Parcial1.DOMINGUEZ.Libreria.Entidades
             _reclutadoras.Add(new Reclutadora(101, "Agencia Ramos SRL", "30-55123456-1"));
         }
 
-        public List<Comercio> Comercios { get => _comercios; set => _comercios = value; }
+        public List<Comercio> Comercios { get => _comercios;}
 
         private bool ExisteEmpresa (string cuit)
         {
@@ -55,6 +55,9 @@ namespace Parcial1.DOMINGUEZ.Libreria.Entidades
 
         public Reclutadora GetReclutadoraLogueada()
         {
+            if (this._reclutadoras.Count == 0)
+                return null;
+
             return this._reclutadoras.First();
         }
 

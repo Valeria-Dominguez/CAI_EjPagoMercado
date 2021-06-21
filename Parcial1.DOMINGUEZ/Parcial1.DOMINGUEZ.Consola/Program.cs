@@ -31,13 +31,50 @@ namespace Parcial1.DOMINGUEZ.Consola
                         ListarAdhesiones();
                         break;
                     case "2":
-                        ConsultarAdhesion();
+                        try
+                        {
+                            ConsultarAdhesion();
+                        }
+                        catch (EmpresaNoExistenteException empresaNoExistExcep)
+                        {
+                            Console.WriteLine(empresaNoExistExcep.Message);
+                        }
                         break;
                     case "3":
-                        AltaAdhesion(reclutadoraActiva);
+                        try
+                        {
+                            AltaAdhesion(reclutadoraActiva);
+                        }
+                        catch (EmpresaNoExistenteException empresaNoExistExcep)
+                        {
+                            Console.WriteLine(empresaNoExistExcep.Message);
+                        }
+                        catch (AdhesionExistenteException adhesionExistExcep)
+                        {
+                            Console.WriteLine(adhesionExistExcep.Message);
+                        }
+                        catch (AdhesionNoPermitidaException adhesionNoPermitidaExcep)
+                        {
+                            Console.WriteLine(adhesionNoPermitidaExcep.Message);
+                        }
+                        catch (Exception exe)
+                        {
+                            Console.WriteLine(exe.Message);
+                        }
                         break;
                     case "4":
-                        EliminarAdhesion();
+                        try
+                        {
+                            EliminarAdhesion();
+                        }
+                        catch (EmpresaNoExistenteException empresaNoExistExcep)
+                        {
+                            Console.WriteLine(empresaNoExistExcep.Message);
+                        }
+                        catch (AdhesionNoExistenteException adhesionNoExistExcep)
+                        {
+                            Console.WriteLine(adhesionNoExistExcep.Message);
+                        }
                         break;
                     case "X":
                         // SALIR
@@ -47,7 +84,7 @@ namespace Parcial1.DOMINGUEZ.Consola
                         break;
                 }
             }
-            while (opcionMenu!="X");
+            while (opcionMenu != "X");
         }
 
         static void DesplegarOpcionesMenu()
@@ -70,97 +107,66 @@ namespace Parcial1.DOMINGUEZ.Consola
                     Console.WriteLine(adhesion.ToString());
         }
 
-
         static void ConsultarAdhesion()
         {
-            try
-            {
-                // ingreso cuit
-                string cuit = ValidacionesConsola.ValidarStrNoVac("Ingrese CUIT");
-                // consultar adhesion
-                bool adherido = _plataforma.ConsultarAdhesion(cuit);
-                if (adherido)
-                    Console.WriteLine("Comercio adherido");
-                else
-                    Console.WriteLine("El comercio no está adherido");
-            }
-            catch (EmpresaNoExistenteException empresaNoExistExcep)
-            {
-                Console.WriteLine(empresaNoExistExcep.Message);
-            }
+            // ingreso cuit
+            string cuit = ValidacionesConsola.ValidarStrNoVac("Ingrese CUIT");
+            // consultar adhesion
+            bool adherido = _plataforma.ConsultarAdhesion(cuit);
+            if (adherido)
+                Console.WriteLine("Comercio adherido");
+            else
+                Console.WriteLine("El comercio no está adherido");
         }
 
         static void AltaAdhesion(Reclutadora p)
         {
-            try
+            if (p == null)
+                throw new Exception("No hay reclutadoras");
+
+            // Listar comercios
+            List<Comercio> comercios = _plataforma.Comercios;
+
+            if (comercios.Count == 0)
+                Console.WriteLine("No hay comercios ingresados");
+            else
             {
-                // Listar comercios
-                List<Comercio> comercios = _plataforma.Comercios;
+                // usuario selecciona el cuit que desea agregar
+                string cuit = ValidacionesConsola.ValidarStrNoVac("Ingrese CUIT");
 
-                if (comercios.Count == 0)
-                    Console.WriteLine("No hay comercios ingresados");
-                else
+                //En el método ConsultarAdhesion() además se valida si la empresa existe
+                if (_plataforma.ConsultarAdhesion(cuit))
+                    throw new AdhesionExistenteException("El comercio ya se encuentra adherido");
+
+                foreach (Comercio comercio in comercios)
                 {
-                    // usuario selecciona el cuit que desea agregar
-                    string cuit = ValidacionesConsola.ValidarStrNoVac("Ingrese CUIT");
-
-                    //En el método ConsultarAdhesion() además se valida si la empresa existe
-                    if (_plataforma.ConsultarAdhesion(cuit))
-                        throw new AdhesionExistenteException("El comercio ya se encuentra adherido");
-
-                    foreach (Comercio comercio in comercios)
+                    if (comercio.Cuit == cuit)
                     {
-                        if (comercio.Cuit == cuit)
-                        {
-                            if (comercio is ComercioOnline)
-                                throw new AdhesionNoPermitidaException("No puede adherirse un comercio online");
+                        if (comercio is ComercioOnline)
+                            throw new AdhesionNoPermitidaException("No puede adherirse un comercio online");
 
-                            // Agregar adhesión
-                            Adhesion adhesion = new Adhesion(p, comercio, 0);
-                            _plataforma.AgregarAdhesion(adhesion);
-                            Console.WriteLine("Adhesión exitosa");
-                        }
+                        // Agregar adhesión
+                        Adhesion adhesion = new Adhesion(p, comercio, 0);
+                        _plataforma.AgregarAdhesion(adhesion);
+                        Console.WriteLine("Adhesión exitosa");
                     }
                 }
-            }
-            catch (EmpresaNoExistenteException empresaNoExistExcep)
-            {
-                Console.WriteLine(empresaNoExistExcep.Message);
-            }
-            catch (AdhesionExistenteException adhesionExistExcep)
-            {
-                Console.WriteLine(adhesionExistExcep.Message);
-            }
-            catch (AdhesionNoPermitidaException adhesionNoPermitidaExcep)
-            {
-                Console.WriteLine(adhesionNoPermitidaExcep.Message);
             }
         }
 
         static void EliminarAdhesion()
         {
-            try
+            // Listar comercios
+            List<Comercio> comercios = _plataforma.Comercios;
+            if (comercios.Count == 0)
+                Console.WriteLine("No hay comercios ingresados");
+            else
             {
-                // Listar comercios
-                List<Comercio> comercios = _plataforma.Comercios;
-                if (comercios.Count == 0)
-                    Console.WriteLine("No hay comercios ingresados");
-                else
-                {
-                    // usuario selecciona el cuit que desea eliminar
-                    string cuit = ValidacionesConsola.ValidarStrNoVac("Ingrese CUIT");
-                    // Eliminar adhesión
-                    _plataforma.EliminarAdhesion(cuit);
-                    Console.WriteLine("Eliminación exitosa");
-                }
-            }
-            catch (EmpresaNoExistenteException empresaNoExistExcep)
-            {
-                Console.WriteLine(empresaNoExistExcep.Message);
-            }
-            catch (AdhesionNoExistenteException adhesionNoExistExcep)
-            {
-                Console.WriteLine(adhesionNoExistExcep.Message);
+                // usuario selecciona el cuit que desea eliminar
+                string cuit = ValidacionesConsola.ValidarStrNoVac("Ingrese CUIT");
+                // Eliminar adhesión
+                _plataforma.EliminarAdhesion(cuit);
+                Console.WriteLine("Eliminación exitosa");
             }
         }
 

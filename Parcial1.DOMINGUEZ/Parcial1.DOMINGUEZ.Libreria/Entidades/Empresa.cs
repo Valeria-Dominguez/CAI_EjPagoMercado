@@ -11,6 +11,10 @@ namespace Parcial1.DOMINGUEZ.Libreria.Entidades
         protected string _razonSocial;
         protected string _cuit;
 
+        protected Empresa()
+        {
+        }
+
         protected Empresa(string razonSocial, string cuit)
         {
             _razonSocial = razonSocial;

@@ -10,6 +10,10 @@ namespace Parcial1.DOMINGUEZ.Libreria.Entidades
     {
         private int _registro;
 
+        public Reclutadora()
+        {
+        }
+
         public Reclutadora(int registro, string razonSocial, string cuit) : base(razonSocial, cuit)
         {
             _registro = registro;
