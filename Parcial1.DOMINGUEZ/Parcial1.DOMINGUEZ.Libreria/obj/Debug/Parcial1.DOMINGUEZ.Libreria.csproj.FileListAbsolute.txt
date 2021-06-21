@@ -1,0 +1,6 @@
+C:\Users\Valeria\source\repos\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Libreria\obj\Debug\Parcial1.DOMINGUEZ.Libreria.csprojAssemblyReference.cache
+C:\Users\Valeria\source\repos\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Libreria\obj\Debug\Parcial1.DOMINGUEZ.Libreria.csproj.CoreCompileInputs.cache
+C:\Users\Valeria\source\repos\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Libreria\bin\Debug\Parcial1.DOMINGUEZ.Libreria.dll
+C:\Users\Valeria\source\repos\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Libreria\bin\Debug\Parcial1.DOMINGUEZ.Libreria.pdb
+C:\Users\Valeria\source\repos\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Libreria\obj\Debug\Parcial1.DOMINGUEZ.Libreria.dll
+C:\Users\Valeria\source\repos\Parcial1.DOMINGUEZ\Parcial1.DOMINGUEZ.Libreria\obj\Debug\Parcial1.DOMINGUEZ.Libreria.pdb
